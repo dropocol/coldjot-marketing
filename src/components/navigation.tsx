@@ -5,8 +5,8 @@ export const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Features", href: "/features" },
-    { name: "Pricing", href: "/pricing" },
+    { name: "Features", href: "#features" },
+    { name: "Pricing", href: "#pricing" },
     { name: "Blog", href: "/blog" },
     { name: "Help", href: "/help" },
   ];
@@ -17,7 +17,8 @@ export const Navigation: React.FC = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold">ColdJot</span>
+              {/* <span className="text-2xl font-bold">ColdJot</span> */}
+              <img src="/logo.svg" alt="ColdJot Logo" className="h-auto w-32" />
             </a>
           </div>
 
@@ -32,10 +33,10 @@ export const Navigation: React.FC = () => {
                 {item.name}
               </a>
             ))}
-            <Button variant="ghost" size="sm">
-              Sign In
-            </Button>
-            <Button size="sm">Get Started</Button>
+            {/* <Button variant="ghost" size="sm">
+              <a href="https://app.coldjot.com/auth/signin">Sign In</a>
+            </Button> */}
+            <Button size="sm">Coming Soon</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -93,10 +94,10 @@ export const Navigation: React.FC = () => {
               </a>
             ))}
             <div className="mt-4 space-y-2">
-              <Button variant="ghost" className="w-full justify-start">
-                Sign In
-              </Button>
-              <Button className="w-full">Get Started</Button>
+              {/* <Button variant="ghost" className="w-full justify-start">
+                <a href="https://app.coldjot.com/auth/signin">Sign In</a>
+              </Button> */}
+              <Button className="w-full">Coming Soon</Button>
             </div>
           </div>
         </div>

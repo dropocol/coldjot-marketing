@@ -1,0 +1,82 @@
+---
+import { Clock, Target, Inbox } from "lucide-react";
+
+interface Problem {
+  title: string;
+  description: string;
+  icon: any;
+  iconColor: string;
+}
+
+const problems: Problem[] = [
+  {
+    title: "Cold Emails Don't Convert",
+    description:
+      "Generic cold emails get ignored. Your prospects are drowning in automated spam that lacks personalization and timing.",
+    icon: Target,
+    iconColor: "text-rose-600",
+  },
+  {
+    title: "Manual Work Doesn't Scale",
+    description:
+      "You're stuck choosing between quality and quantity. Personalizing each follow-up means you can only reach a fraction of your prospects.",
+    icon: Clock,
+    iconColor: "text-amber-600",
+  },
+  {
+    title: "Opportunities Get Lost",
+    description:
+      "Without proper timing and sequence, even interested prospects slip away. The manual process means missed connections and lost deals.",
+    icon: Inbox,
+    iconColor: "text-blue-600",
+  },
+];
+---
+
+<section class="py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-6 mb-16">
+      <div
+        class="inline-flex items-center justify-center px-4 py-1.5 mb-4 border border-primary/20 bg-primary/10 rounded-full"
+      >
+        <span class="text-sm font-medium text-primary">The Problem</span>
+      </div>
+      <h2 class="text-4xl font-semibold font-display">
+        Why Most Cold Emails Fail
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        Every day, millions of cold emails go straight to trash. Here's why your
+        outreach might be failing:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        problems.map((problem) => (
+          <div class="relative bg-white p-8 rounded-2xl border border-slate-200 overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-50/50 to-white" />
+            <div class="relative">
+              <div class="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 mb-4 group-hover:bg-slate-200 transition-colors">
+                <problem.icon className={`h-6 w-6 ${problem.iconColor}`} />
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                {problem.title}
+              </h3>
+              <p class="text-muted-foreground leading-relaxed">
+                {problem.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        The solution isn't sending more emails. It's sending <span
+          class="font-semibold text-gray-900">smarter sequences</span
+        > with <span class="font-semibold text-gray-900">perfect timing</span>.
+      </p>
+    </div>
+  </div>
+</section>

@@ -22,6 +22,21 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://coldjot.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://coldjot.com/og-image.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="coldjot.com" />
+    <meta property="twitter:url" content="https://coldjot.com" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://coldjot.com/og-image.png" />
   </head>
   <body class="min-h-screen flex flex-col bg-background text-foreground">
     <Navigation client:load />
