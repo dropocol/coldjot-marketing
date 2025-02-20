@@ -6,44 +6,71 @@ interface FAQ {
 
 const faqs: FAQ[] = [
   {
-    question: "How does the free trial work?",
+    question: "How do email sequences work?",
     answer:
-      "Our 14-day free trial gives you full access to all Professional plan features. No credit card required to start.",
+      "Email sequences allow you to create a series of pre-written emails that are automatically sent based on your defined schedule and rules. Set up your sequence once, and ColdJot handles all the follow-ups automatically.",
   },
   {
-    question: "Can I import my existing contacts?",
+    question: "Can I host ColdJot on my own server?",
     answer:
-      "Yes, you can easily import contacts via CSV file or integrate with your existing CRM system.",
+      "Yes! ColdJot is open source and can be self-hosted. You get full access to the source code and can deploy it on your own infrastructure. We provide detailed documentation for setup and deployment.",
   },
   {
-    question: "What kind of support do you offer?",
+    question: "How many Gmail accounts can I connect?",
     answer:
-      "We offer email support for all plans, with priority support and dedicated account managers for Professional and Enterprise plans.",
+      "With the Community Edition, you can connect and manage multiple Gmail accounts. Each mailbox can have its own sequences, templates, and tracking settings.",
+  },
+  {
+    question: "How does contact management work?",
+    answer:
+      "You can import contacts via CSV files, manage them in lists, and organize them based on your needs. Each contact can be part of multiple sequences and you can track their engagement individually.",
+  },
+  {
+    question: "What kind of analytics are available?",
+    answer:
+      "The basic analytics include email open rates, click tracking, and sequence performance metrics. You can monitor your campaign progress and see which emails are performing best.",
+  },
+  {
+    question: "Is there a limit on email sequences?",
+    answer:
+      "No, you can create unlimited email sequences in both Community and Cloud editions. Each sequence can have as many steps as you need, with flexible timing and conditions.",
   },
 ];
 ---
 
 <section id="faq" class="py-20">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center space-y-4 mb-16">
-      <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
+      <h2 class="text-4xl font-semibold font-display">Common Questions</h2>
       <p class="text-xl text-muted-foreground">
-        Find answers to common questions about ColdJot
+        Everything you need to know about ColdJot's features and capabilities
       </p>
     </div>
 
     <div class="space-y-4">
       {
         faqs.map((faq) => (
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="rounded-xl border bg-white text-card-foreground shadow-sm">
             <div class="p-6">
-              <h3 class="text-lg font-semibold">{faq.question}</h3>
+              <h3 class="text-lg font-semibold text-foreground">
+                {faq.question}
+              </h3>
               <p class="mt-2 text-muted-foreground">{faq.answer}</p>
             </div>
           </div>
         ))
       }
     </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-muted-foreground">
+        Still have questions? <a
+          href="#contact"
+          class="text-primary hover:underline"
+        >
+          Get in touch
+        </a> with our team.
+      </p>
+    </div>
   </div>
 </section>
-

@@ -1,24 +1,52 @@
 ---
 import { Button } from "./button";
+import { Github, ArrowRight } from "lucide-react";
 ---
 
 <section class="relative py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-    <div class="space-y-4">
-      <h2 class="text-3xl font-bold">
-        Ready to Streamline Your Email Outreach?
-      </h2>
-      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-        Join thousands of users who are already using ColdJot to automate their
-        email sequences and improve their outreach results.
-      </p>
-    </div>
-    <Button variant="default" size="lg" client:load>Get Started for Free</Button
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white"
     >
-  </div>
-  <!-- Background Pattern -->
-  <div
-    class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
-  >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-50/50"
+      >
+      </div>
+      <div class="relative px-6 py-16 sm:px-16 sm:py-20 lg:px-20">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-4xl font-semibold font-display tracking-tight">
+            Ready to Automate Your Follow-ups?
+          </h2>
+          <p class="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
+            Join the open source revolution in email automation. Start with our
+            Community Edition today – it's free forever, and you own your data.
+          </p>
+          <div class="mt-10 flex items-center justify-center gap-4">
+            <Button variant="default" size="lg" className="group" client:load>
+              Get Started Free
+              <ArrowRight
+                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+              />
+            </Button>
+            <Button variant="outline" size="lg" client:load>
+              <Github className="mr-2 h-4 w-4" />
+              Star on GitHub
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative background -->
+      <div
+        class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
+        aria-hidden="true"
+      >
+        <div
+          class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-primary/30 to-primary/10 opacity-30"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+        >
+        </div>
+      </div>
+    </div>
   </div>
 </section>

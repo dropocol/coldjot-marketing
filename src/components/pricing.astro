@@ -1,111 +1,142 @@
 ---
 import { Button } from "./button";
+import { Github, Sparkles } from "lucide-react";
 
 interface PricingPlan {
   name: string;
-  price: number;
+  badge?: string;
   description: string;
+  price: string;
   features: string[];
+  action: {
+    text: string;
+    variant: "default" | "outline";
+  };
 }
 
 const pricingPlans: PricingPlan[] = [
   {
-    name: "Starter",
-    price: 0,
-    description: "Perfect for trying out ColdJot",
+    name: "Community Edition",
+    badge: "Available Now",
+    description: "Self-host the full-featured open source version",
+    price: "Free Forever",
     features: [
-      "Up to 100 contacts",
-      "Basic email sequences",
-      "Standard templates",
-      "Email tracking",
+      "Unlimited email sequences",
+      "Full source code access",
+      "Self-hosted deployment",
+      "Basic analytics",
       "Community support",
+      "MIT License",
     ],
+    action: {
+      text: "Star on GitHub",
+      variant: "outline",
+    },
   },
   {
-    name: "Professional",
-    price: 49,
-    description: "Ideal for growing businesses",
+    name: "Cloud Pro",
+    badge: "Coming Soon",
+    description: "Managed cloud solution with advanced features",
+    price: "Join Waitlist",
     features: [
-      "Up to 2,500 contacts",
-      "Advanced sequences",
-      "Custom templates",
-      "Detailed analytics",
+      "Everything in Community +",
+      "Managed cloud hosting",
+      "Advanced AI features",
+      "Premium analytics",
       "Priority support",
-      "API access",
+      "Early access to new features",
     ],
-  },
-  {
-    name: "Enterprise",
-    price: 99,
-    description: "For large scale operations",
-    features: [
-      "Unlimited contacts",
-      "Advanced automation",
-      "Custom integrations",
-      "Dedicated support",
-      "SLA guarantee",
-      "Custom features",
-    ],
+    action: {
+      text: "Get Early Access",
+      variant: "default",
+    },
   },
 ];
 ---
 
-<section id="pricing" class="py-20 bg-secondary/50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="pricing" class="py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center space-y-4 mb-16">
-      <h2 class="text-3xl font-bold">Simple, Transparent Pricing</h2>
-      <p class="text-xl text-muted-foreground">
-        Choose the plan that best fits your needs
+      <h2 class="text-4xl font-semibold font-display">
+        Comprehensive Features
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+        Start with our powerful open source edition and upgrade to cloud when
+        you need more. No vendor lock-in, ever.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 gap-8">
       {
         pricingPlans.map((plan) => (
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
-            <div class="p-6 space-y-6">
-              <div>
-                <h3 class="text-2xl font-bold">{plan.name}</h3>
-                <p class="text-muted-foreground">{plan.description}</p>
-              </div>
-              <div class="text-3xl font-bold">
-                ${plan.price}
-                <span class="text-lg font-normal text-muted-foreground">
-                  /mo
+          <div class="relative flex flex-col rounded-2xl border bg-card text-card-foreground shadow-sm">
+            {plan.badge && (
+              <div class="absolute -top-3 left-6">
+                <span class="inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium bg-primary/10 text-primary">
+                  {plan.badge === "Coming Soon" ? (
+                    <Sparkles className="h-3 w-3" />
+                  ) : (
+                    <div class="h-2 w-2 rounded-full bg-primary" />
+                  )}
+                  {plan.badge}
                 </span>
               </div>
-              <ul class="space-y-2">
-                {plan.features.map((feature) => (
-                  <li class="flex items-center">
-                    <svg
-                      class="h-4 w-4 text-primary mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Button
-                variant={plan.name === "Professional" ? "default" : "outline"}
-                className="w-full"
-                client:load
-              >
-                Get Started
-              </Button>
+            )}
+            <div class="p-6">
+              <div class="flex flex-col gap-4">
+                <div>
+                  <h3 class="text-2xl font-bold">{plan.name}</h3>
+                  <p class="text-muted-foreground">{plan.description}</p>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-3xl font-bold">{plan.price}</span>
+                </div>
+              </div>
+              <div class="mt-8 space-y-4">
+                <ul class="space-y-3">
+                  {plan.features.map((feature) => (
+                    <li class="flex items-center">
+                      <svg
+                        class="h-4 w-4 text-primary mr-3 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  variant={plan.action.variant}
+                  className="w-full mt-6"
+                  client:load
+                >
+                  {plan.name === "Community Edition" && (
+                    <Github className="h-4 w-4 mr-2" />
+                  )}
+                  {plan.action.text}
+                </Button>
+              </div>
             </div>
           </div>
         ))
       }
     </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-muted-foreground">
+        Need a custom solution? <a
+          href="#contact"
+          class="text-primary hover:underline">Contact us</a
+        > for enterprise options.
+      </p>
+    </div>
   </div>
 </section>
-
