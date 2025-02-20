@@ -23,34 +23,41 @@ const mainFeatures = [
     title: "Email Sequences",
     description:
       "Create and manage sophisticated email sequences with ease. Schedule, automate, and track your email campaigns effortlessly.",
-    icon: Mail,
+    image: {
+      "1x": "/src/assets/sequence.png",
+      "2x": "/src/assets/sequence@2x.png",
+    },
   },
   {
     title: "Analytics Dashboard",
     description:
       "Get detailed insights into your email campaigns with comprehensive analytics. Track opens, clicks, and engagement metrics.",
-    icon: BarChart3,
+    image: {
+      "1x": "/src/assets/analytics.png",
+      "2x": "/src/assets/analytics@2x.png",
+    },
   },
-];
-
-const additionalFeatures = [
   {
     title: "Timeline View",
     description:
       "Visualize your email sequence timeline and monitor outgoing communications in real-time.",
-    colSpan: "col-span-12 md:col-span-7",
-    icon: Timer,
-    iconColor: "text-indigo-600",
+    image: {
+      "1x": "/src/assets/timeline.png",
+      "2x": "/src/assets/timeline@2x.png",
+    },
   },
-
   {
     title: "Email Tracking",
     description:
       "Track opens, clicks, and engagement in real-time. Get insights into how your emails perform.",
-    colSpan: "col-span-12 md:col-span-5",
-    icon: Activity,
-    iconColor: "text-sky-600",
+    image: {
+      "1x": "/src/assets/tracking.png",
+      "2x": "/src/assets/tracking@2x.png",
+    },
   },
+];
+
+const additionalFeatures = [
   {
     title: "Gmail Integration",
     description:
@@ -90,11 +97,12 @@ const additionalFeatures = [
 <section id="features" class="py-20">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center space-y-4 mb-16">
-      <h2 class="text-4xl font-bold font-display">
-        Everything You Need for Email Automation
+      <h2 class="text-4xl font-semibold font-display">
+        Comprehensive Email Automation Tools
       </h2>
       <p class="text-xl text-muted-foreground">
-        Powerful features to help you manage and optimize your email campaigns
+        Advanced features designed to enhance and streamline your email
+        marketing efforts
       </p>
     </div>
 
@@ -104,28 +112,19 @@ const additionalFeatures = [
         mainFeatures.map((feature) => (
           <div class="space-y-8">
             <div class="flex flex-col max-w-xl mx-auto items-center gap-4">
-              {/* <feature.icon
-                className="h-12 w-12 text-primary mb-2"
-                client:load
-              /> */}
-              <h3 class="text-4xl font-semibold mb-2">{feature.title}</h3>
+              <h3 class="text-3xl font-semibold mb-2">{feature.title}</h3>
               <p class="text-center text-muted-foreground">
                 {feature.description}
               </p>
             </div>
 
-            <div class="bg-white p-1 border shadow-sm border-gray-200 rounded-2xl">
-              <div class="flex border pt-3.5 border-gray-100 justify-center items-center bg-gray-50 rounded-xl overflow-hidden h-[400px]">
-                {/* <img
-                  src="/src/assets/app.png"
-                  alt={`${feature.title} Interface`}
-                  class="w-full h-full object-cover object-top"
-                /> */}
-
+            <div class="bg-white p-1 border shadow-sm border-slate-200 rounded-2xl">
+              <div class="flex border py-4 border-slate-100 justify-center items-center bg-gray-50 rounded-xl overflow-hidden h-auto px-4">
                 <img
-                  src="/src/assets/app.png"
+                  src={feature.image["1x"]}
+                  srcset={`${feature.image["1x"]} 1x, ${feature.image["2x"]} 2x`}
                   alt={`${feature.title} Interface`}
-                  class="w-full h-full object-cover object-top mx-4 border border-b-0 rounded-b-none border-slate-300 rounded-2xl shadow-2xl"
+                  class="w-full h-full object-cover object-top mx-4 border border-slate-300 rounded-2xl shadow-2xl"
                 />
               </div>
             </div>
@@ -157,17 +156,17 @@ const additionalFeatures = [
             <div
               class={`group flex flex-col rounded-2xl border-[1px] border-slate-200 p-1 shadow-sm ${feature.colSpan}`}
             >
-              <div class="flex flex-1 flex-col justify-between gap-3 rounded-xl p-6 bg-gray-50 border-[1px] border-gray-100 transition-colors duration-200 group-hover:border-gray-200">
+              <div class="flex flex-1 flex-col justify-between gap-3 rounded-xl p-6 bg-gray-50 border-[1px] border-slate-100 transition-colors duration-200 group-hover:border-slate-200">
                 <div class="aspect-[4/1] md:aspect-[4/1]">
                   <feature.icon
                     className={`h-8 w-8 md:h-10 md:w-10 ${feature.iconColor}`}
                   />
                 </div>
                 <div class="flex flex-col gap-2">
-                  <h4 class="flex items-center text-md font-semibold text-gray-900">
+                  <h4 class="flex items-center text-lg font-semibold text-gray-900">
                     <span>{feature.title}</span>
                   </h4>
-                  <p class="text-pretty text-sm text-gray-800">
+                  <p class="text-balance text-base text-gray-800">
                     {feature.description}
                   </p>
                 </div>
@@ -179,11 +178,3 @@ const additionalFeatures = [
     </div>
   </div>
 </section>
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;500;600;700&display=swap");
-
-  .font-display {
-    font-family: "Cal Sans", system-ui, sans-serif;
-  }
-</style>
