@@ -1,0 +1,49 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQ[] = [
+  {
+    question: "How does the free trial work?",
+    answer:
+      "Our 14-day free trial gives you full access to all Professional plan features. No credit card required to start.",
+  },
+  {
+    question: "Can I import my existing contacts?",
+    answer:
+      "Yes, you can easily import contacts via CSV file or integrate with your existing CRM system.",
+  },
+  {
+    question: "What kind of support do you offer?",
+    answer:
+      "We offer email support for all plans, with priority support and dedicated account managers for Professional and Enterprise plans.",
+  },
+];
+---
+
+<section id="faq" class="py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-4 mb-16">
+      <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
+      <p class="text-xl text-muted-foreground">
+        Find answers to common questions about ColdJot
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold">{faq.question}</h3>
+              <p class="mt-2 text-muted-foreground">{faq.answer}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,73 @@
+---
+import { Button } from "@/components/button";
+---
+
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+    <div class="text-center space-y-10">
+      <div class="space-y-8">
+        <div class="relative">
+          <div
+            class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+          >
+          </div>
+          <h2
+            class="relative inline-block px-6 py-2 bg-background text-primary font-mono text-sm tracking-wide"
+          >
+            Transform your outreach strategy
+          </h2>
+        </div>
+        <h1
+          class="text-5xl sm:text-6xl lg:text-7xl font-bold font-display tracking-tight"
+        >
+          Automate Your Email Outreach
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
+            >with ColdJot</span
+          >
+        </h1>
+        <p class="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+          Stop wasting hours on manual follow-ups and scattered spreadsheets.
+          <span class="font-medium text-foreground"
+            >Create powerful email sequences that convert</span
+          >, track performance with real-time analytics, and <span
+            class="font-medium text-foreground">10x your response rates</span
+          > with our AI-powered automation platform.
+        </p>
+      </div>
+      <div class="flex justify-center gap-4">
+        <Button variant="default" size="lg" client:load>Start Free Trial</Button
+        >
+        <Button variant="outline" size="lg" client:load>Watch Demo</Button>
+      </div>
+
+      <div
+        class="mt-12 bg-white p-1 border shadow-sm border-slate-200 rounded-2xl border-t-slate-300"
+      >
+        <div
+          class="flex border pt-3.5 border-gray-100 justify-center items-center bg-neutral-50 rounded-xl overflow-hidden h-[600px]"
+        >
+          <img
+            src="/src/assets/app.png"
+            alt="ColdJot App Interface"
+            class="w-full h-full object-cover object-top mx-4 border border-b-0 rounded-b-none border-slate-300 rounded-2xl shadow-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Pattern -->
+  <div
+    class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
+  >
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;500;600;700&display=swap");
+
+  .font-display {
+    font-family: "Cal Sans", system-ui, sans-serif;
+  }
+</style>

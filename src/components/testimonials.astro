@@ -1,0 +1,72 @@
+---
+interface Testimonial {
+  name: string;
+  role: string;
+  image: string;
+  content: string;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    name: "Sarah Johnson",
+    role: "Marketing Director",
+    image:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop",
+    content:
+      "ColdJot has transformed our email outreach strategy. The automation features and analytics have helped us increase our response rates by 45%.",
+  },
+  {
+    name: "Michael Chen",
+    role: "Sales Manager",
+    image:
+      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1760&auto=format&fit=crop",
+    content:
+      "The email sequence builder is incredibly intuitive. We've saved countless hours on our outreach campaigns since switching to ColdJot.",
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "Startup Founder",
+    image:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1587&auto=format&fit=crop",
+    content:
+      "As a startup founder, ColdJot has been invaluable for our growth. The platform's ease of use and powerful features make it a perfect solution.",
+  },
+];
+---
+
+<section id="testimonials" class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-4 mb-16">
+      <h2 class="text-3xl font-bold">What Our Users Say</h2>
+      <p class="text-xl text-muted-foreground">
+        Join thousands of satisfied customers who have transformed their email
+        outreach
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        testimonials.map((testimonial) => (
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div class="flex flex-col space-y-4 p-6">
+              <div class="flex items-center space-x-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  class="rounded-full h-12 w-12 object-cover"
+                />
+                <div>
+                  <h3 class="font-semibold">{testimonial.name}</h3>
+                  <p class="text-sm text-muted-foreground">
+                    {testimonial.role}
+                  </p>
+                </div>
+              </div>
+              <p class="text-muted-foreground">{testimonial.content}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

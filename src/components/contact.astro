@@ -1,0 +1,54 @@
+---
+import { Button } from "@/components/button";
+---
+
+<section id="contact" class="py-20 bg-secondary/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+        <p class="text-muted-foreground mb-8">
+          Have questions? We're here to help. Send us a message and we'll
+          respond as soon as possible.
+        </p>
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-semibold">Email</h3>
+            <p class="text-muted-foreground">support@coldjot.com</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">Office</h3>
+            <p class="text-muted-foreground">
+              123 Email Street, San Francisco, CA 94107
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card p-6">
+        <form class="space-y-4">
+          <div>
+            <label class="text-sm font-medium">Name</label>
+            <input
+              type="text"
+              class="mt-1 w-full rounded-md border bg-background px-3 py-2"
+            />
+          </div>
+          <div>
+            <label class="text-sm font-medium">Email</label>
+            <input
+              type="email"
+              class="mt-1 w-full rounded-md border bg-background px-3 py-2"
+            />
+          </div>
+          <div>
+            <label class="text-sm font-medium">Message</label>
+            <textarea
+              class="mt-1 w-full rounded-md border bg-background px-3 py-2"
+              rows="4"></textarea>
+          </div>
+          <Button className="w-full" client:load>Send Message</Button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

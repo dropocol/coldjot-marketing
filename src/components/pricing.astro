@@ -1,0 +1,111 @@
+---
+import { Button } from "./button";
+
+interface PricingPlan {
+  name: string;
+  price: number;
+  description: string;
+  features: string[];
+}
+
+const pricingPlans: PricingPlan[] = [
+  {
+    name: "Starter",
+    price: 0,
+    description: "Perfect for trying out ColdJot",
+    features: [
+      "Up to 100 contacts",
+      "Basic email sequences",
+      "Standard templates",
+      "Email tracking",
+      "Community support",
+    ],
+  },
+  {
+    name: "Professional",
+    price: 49,
+    description: "Ideal for growing businesses",
+    features: [
+      "Up to 2,500 contacts",
+      "Advanced sequences",
+      "Custom templates",
+      "Detailed analytics",
+      "Priority support",
+      "API access",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: 99,
+    description: "For large scale operations",
+    features: [
+      "Unlimited contacts",
+      "Advanced automation",
+      "Custom integrations",
+      "Dedicated support",
+      "SLA guarantee",
+      "Custom features",
+    ],
+  },
+];
+---
+
+<section id="pricing" class="py-20 bg-secondary/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-4 mb-16">
+      <h2 class="text-3xl font-bold">Simple, Transparent Pricing</h2>
+      <p class="text-xl text-muted-foreground">
+        Choose the plan that best fits your needs
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        pricingPlans.map((plan) => (
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div class="p-6 space-y-6">
+              <div>
+                <h3 class="text-2xl font-bold">{plan.name}</h3>
+                <p class="text-muted-foreground">{plan.description}</p>
+              </div>
+              <div class="text-3xl font-bold">
+                ${plan.price}
+                <span class="text-lg font-normal text-muted-foreground">
+                  /mo
+                </span>
+              </div>
+              <ul class="space-y-2">
+                {plan.features.map((feature) => (
+                  <li class="flex items-center">
+                    <svg
+                      class="h-4 w-4 text-primary mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button
+                variant={plan.name === "Professional" ? "default" : "outline"}
+                className="w-full"
+                client:load
+              >
+                Get Started
+              </Button>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+

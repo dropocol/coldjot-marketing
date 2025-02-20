@@ -1,129 +1,23 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Button } from "../components/Button";
-
-const features = [
-  {
-    title: "Email Sequences",
-    description:
-      "Create and manage sophisticated email sequences with ease. Schedule, automate, and track your email campaigns effortlessly.",
-    icon: "📧",
-  },
-  {
-    title: "Analytics Dashboard",
-    description:
-      "Get detailed insights into your email campaigns with comprehensive analytics. Track opens, clicks, and engagement metrics.",
-    icon: "📊",
-  },
-  {
-    title: "Timeline View",
-    description:
-      "Visualize your email sequence timeline and monitor outgoing communications in real-time.",
-    icon: "⏱️",
-  },
-  {
-    title: "Email Templates",
-    description:
-      "Create and save reusable email templates to maintain consistency and save time in your outreach.",
-    icon: "📝",
-  },
-  {
-    title: "Contact Management",
-    description:
-      "Organize and manage your contacts efficiently. Import, segment, and track engagement with your audience.",
-    icon: "👥",
-  },
-  {
-    title: "Smart Automation",
-    description:
-      "Set up intelligent automation rules to send the right emails at the right time to the right people.",
-    icon: "🤖",
-  },
-];
+import Layout from "@/layouts/layout.astro";
+import Hero from "@/components/hero.astro";
+import Features from "@/components/features.astro";
+import Testimonials from "@/components/testimonials.astro";
+import Pricing from "@/components/pricing.astro";
+import FAQ from "@/components/faq.astro";
+import Contact from "@/components/contact.astro";
+import CTA from "@/components/cta.astro";
+import Footer from "@/components/footer.astro";
 ---
 
 <Layout>
-  <!-- Hero Section -->
-  <section class="relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-      <div class="text-center space-y-10">
-        <div class="space-y-6">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">
-            Automate Your Email Outreach with
-            <span class="text-primary">ColdJot</span>
-          </h1>
-          <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Create powerful email sequences, track performance with detailed
-            analytics, and streamline your outreach process with our intuitive
-            email automation platform.
-          </p>
-        </div>
-        <div class="flex justify-center gap-4">
-          <Button variant="default" size="lg" client:load
-            >Start Free Trial</Button
-          >
-          <Button variant="outline" size="lg" client:load>Watch Demo</Button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Background Pattern -->
-    <div
-      class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
-    >
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="py-20 bg-secondary/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center space-y-4 mb-16">
-        <h2 class="text-3xl font-bold">
-          Everything You Need for Email Automation
-        </h2>
-        <p class="text-xl text-muted-foreground">
-          Powerful features to help you manage and optimize your email campaigns
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          features.map((feature) => (
-            <div class="group relative overflow-hidden rounded-lg border bg-background p-6 hover:border-primary/50 transition-colors">
-              <div class="space-y-4">
-                <div class="text-4xl">{feature.icon}</div>
-                <h3 class="text-xl font-semibold">{feature.title}</h3>
-                <p class="text-muted-foreground">{feature.description}</p>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="relative py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-      <div class="space-y-4">
-        <h2 class="text-3xl font-bold">
-          Ready to Streamline Your Email Outreach?
-        </h2>
-        <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Join thousands of users who are already using ColdJot to automate
-          their email sequences and improve their outreach results.
-        </p>
-      </div>
-      <Button variant="default" size="lg" client:load>
-        Get Started for Free
-      </Button>
-    </div>
-    <!-- Background Pattern -->
-    <div
-      class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
-    >
-    </div>
-  </section>
+  <Hero />
+  <Features />
+  <Testimonials />
+  <Pricing />
+  <FAQ />
+  <Contact />
+  <CTA />
 </Layout>
 
 <style>

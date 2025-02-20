@@ -1,0 +1,189 @@
+---
+import {
+  Timer,
+  FileText,
+  Mail,
+  BarChart3,
+  Users,
+  ListTodo,
+  Activity,
+  Mail as MailIcon,
+} from "lucide-react";
+
+interface Feature {
+  title: string;
+  description: string;
+  icon: any;
+  colSpan?: string;
+  iconColor?: string;
+}
+
+const mainFeatures = [
+  {
+    title: "Email Sequences",
+    description:
+      "Create and manage sophisticated email sequences with ease. Schedule, automate, and track your email campaigns effortlessly.",
+    icon: Mail,
+  },
+  {
+    title: "Analytics Dashboard",
+    description:
+      "Get detailed insights into your email campaigns with comprehensive analytics. Track opens, clicks, and engagement metrics.",
+    icon: BarChart3,
+  },
+];
+
+const additionalFeatures = [
+  {
+    title: "Timeline View",
+    description:
+      "Visualize your email sequence timeline and monitor outgoing communications in real-time.",
+    colSpan: "col-span-12 md:col-span-7",
+    icon: Timer,
+    iconColor: "text-indigo-600",
+  },
+
+  {
+    title: "Email Tracking",
+    description:
+      "Track opens, clicks, and engagement in real-time. Get insights into how your emails perform.",
+    colSpan: "col-span-12 md:col-span-5",
+    icon: Activity,
+    iconColor: "text-sky-600",
+  },
+  {
+    title: "Gmail Integration",
+    description:
+      "Connect and manage multiple Gmail mailboxes. Send emails from your preferred Gmail account.",
+    colSpan: "col-span-12 md:col-span-5",
+    icon: MailIcon,
+    iconColor: "text-red-600",
+  },
+
+  {
+    title: "Smart Lists",
+    description:
+      "Create dynamic lists to segment your contacts and automate your email campaigns based on custom criteria.",
+    colSpan: "col-span-12 md:col-span-7",
+    icon: ListTodo,
+    iconColor: "text-purple-600",
+  },
+  {
+    title: "Email Templates",
+    description:
+      "Create and save reusable email templates to maintain consistency and save time in your outreach.",
+    colSpan: "col-span-12 md:col-span-7",
+    icon: FileText,
+    iconColor: "text-emerald-600",
+  },
+  {
+    title: "Contact Management",
+    description:
+      "Organize and manage your contacts efficiently. Import, segment, and track engagement with your audience.",
+    colSpan: "col-span-12 md:col-span-5",
+    icon: Users,
+    iconColor: "text-amber-600",
+  },
+];
+---
+
+<section id="features" class="py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-4 mb-16">
+      <h2 class="text-4xl font-bold font-display">
+        Everything You Need for Email Automation
+      </h2>
+      <p class="text-xl text-muted-foreground">
+        Powerful features to help you manage and optimize your email campaigns
+      </p>
+    </div>
+
+    <!-- Main Features -->
+    <div class="space-y-24 mb-32">
+      {
+        mainFeatures.map((feature) => (
+          <div class="space-y-8">
+            <div class="flex flex-col max-w-xl mx-auto items-center gap-4">
+              {/* <feature.icon
+                className="h-12 w-12 text-primary mb-2"
+                client:load
+              /> */}
+              <h3 class="text-4xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-center text-muted-foreground">
+                {feature.description}
+              </p>
+            </div>
+
+            <div class="bg-white p-1 border shadow-sm border-gray-200 rounded-2xl">
+              <div class="flex border pt-3.5 border-gray-100 justify-center items-center bg-gray-50 rounded-xl overflow-hidden h-[400px]">
+                {/* <img
+                  src="/src/assets/app.png"
+                  alt={`${feature.title} Interface`}
+                  class="w-full h-full object-cover object-top"
+                /> */}
+
+                <img
+                  src="/src/assets/app.png"
+                  alt={`${feature.title} Interface`}
+                  class="w-full h-full object-cover object-top mx-4 border border-b-0 rounded-b-none border-slate-300 rounded-2xl shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Additional Features -->
+    <div class="space-y-8">
+      <h2
+        class="mx-auto w-full max-w-xl text-balance text-center text-3xl font-semibold tracking-tight text-neutral-900"
+      >
+        More Powerful Features
+      </h2>
+      <p
+        class="mx-auto max-w-xl text-balance text-center text-base text-gray-800"
+      >
+        Everything you need to <span class="font-semibold text-gray-900"
+          >streamline your email outreach</span
+        > and <span class="font-semibold text-gray-900"
+          >maximize engagement</span
+        > with your audience.
+      </p>
+
+      <div class="grid grid-cols-12 gap-3 mt-14">
+        {
+          additionalFeatures.map((feature) => (
+            <div
+              class={`group flex flex-col rounded-2xl border-[1px] border-slate-200 p-1 shadow-sm ${feature.colSpan}`}
+            >
+              <div class="flex flex-1 flex-col justify-between gap-3 rounded-xl p-6 bg-gray-50 border-[1px] border-gray-100 transition-colors duration-200 group-hover:border-gray-200">
+                <div class="aspect-[4/1] md:aspect-[4/1]">
+                  <feature.icon
+                    className={`h-8 w-8 md:h-10 md:w-10 ${feature.iconColor}`}
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h4 class="flex items-center text-md font-semibold text-gray-900">
+                    <span>{feature.title}</span>
+                  </h4>
+                  <p class="text-pretty text-sm text-gray-800">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;500;600;700&display=swap");
+
+  .font-display {
+    font-family: "Cal Sans", system-ui, sans-serif;
+  }
+</style>
