@@ -1,0 +1,77 @@
+---
+import Layout from "@/layouts/layout.astro";
+
+// This would typically come from your content collection or CMS
+const posts = [
+  {
+    title: "Maximizing Email Sequence Performance",
+    excerpt:
+      "Learn how to optimize your email sequences for better engagement and conversion rates.",
+    date: "2024-02-20",
+    author: "Sarah Johnson",
+    slug: "maximizing-email-sequence-performance",
+    category: "Email Marketing",
+  },
+  {
+    title: "Best Practices for Email Templates",
+    excerpt:
+      "Discover the key elements of effective email templates and how to create them.",
+    date: "2024-02-18",
+    author: "Michael Chen",
+    slug: "email-template-best-practices",
+    category: "Templates",
+  },
+  {
+    title: "Understanding Email Analytics",
+    excerpt:
+      "A comprehensive guide to understanding and utilizing email campaign analytics.",
+    date: "2024-02-15",
+    author: "Emma Davis",
+    slug: "understanding-email-analytics",
+    category: "Analytics",
+  },
+];
+---
+
+<Layout
+  title="Blog - ColdJot"
+  description="Latest insights and tips about email automation, sequences, and marketing."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">ColdJot Blog</h1>
+      <p class="text-xl text-gray-600">
+        Latest insights and tips about email automation, sequences, and
+        marketing
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        posts.map((post) => (
+          <article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
+            <div class="p-6">
+              <div class="text-sm text-purple-600 mb-2">{post.category}</div>
+              <h2 class="text-xl font-semibold text-gray-900 mb-2">
+                <a href={`/blog/${post.slug}`} class="hover:text-purple-600">
+                  {post.title}
+                </a>
+              </h2>
+              <p class="text-gray-600 mb-4">{post.excerpt}</p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <span>{post.author}</span>
+                <time datetime={post.date}>
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

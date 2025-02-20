@@ -1,0 +1,88 @@
+---
+import Layout from "@/layouts/layout.astro";
+
+const sections = [
+  {
+    title: "Introduction",
+    content: `This Privacy Policy explains how ColdJot ("we," "us," or "our") collects, uses, and protects your personal information when you use our email automation service. By using ColdJot, you agree to the collection and use of information in accordance with this policy.`,
+  },
+  {
+    title: "Information We Collect",
+    content: `We collect information that you provide directly to us, including:
+    • Account information (name, email, password)
+    • Billing information
+    • Email contacts and lists
+    • Email templates and content
+    • Usage data and analytics
+    • Communication preferences`,
+  },
+  {
+    title: "How We Use Your Information",
+    content: `We use the collected information for:
+    • Providing and maintaining our service
+    • Processing your transactions
+    • Sending administrative emails
+    • Improving our service
+    • Analyzing usage patterns
+    • Preventing fraud and abuse
+    • Complying with legal obligations`,
+  },
+  {
+    title: "Data Security",
+    content: `We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.`,
+  },
+  {
+    title: "Data Retention",
+    content: `We retain your personal information for as long as necessary to provide our services and comply with legal obligations. You can request deletion of your account and associated data at any time.`,
+  },
+  {
+    title: "Third-Party Services",
+    content: `We may use third-party services that collect, monitor, and analyze data to help improve our service. These third-party service providers have their own privacy policies addressing how they use such information.`,
+  },
+  {
+    title: "Your Rights",
+    content: `You have the right to:
+    • Access your personal information
+    • Correct inaccurate data
+    • Request deletion of your data
+    • Object to data processing
+    • Export your data
+    • Withdraw consent`,
+  },
+  {
+    title: "Changes to This Policy",
+    content: `We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "last updated" date.`,
+  },
+  {
+    title: "Contact Us",
+    content: `If you have any questions about this Privacy Policy, please contact us at privacy@coldjot.com`,
+  },
+];
+
+const lastUpdated = "February 20, 2024";
+---
+
+<Layout
+  title="Privacy Policy - ColdJot"
+  description="ColdJot's privacy policy and data protection practices."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
+    <p class="text-gray-600 mb-8">Last updated: {lastUpdated}</p>
+
+    <div class="space-y-12">
+      {
+        sections.map((section) => (
+          <section>
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+              {section.title}
+            </h2>
+            <div class="prose prose-purple max-w-none">
+              <p class="text-gray-600 whitespace-pre-line">{section.content}</p>
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
