@@ -1,0 +1,71 @@
+---
+import Layout from "@/layouts/layout.astro";
+import { Sparkles } from "lucide-react";
+import { Button } from "@/components/button";
+---
+
+<Layout>
+  <section class="py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-4 mb-16">
+        <div
+          class="inline-flex items-center justify-center px-4 py-1.5 mb-4 border border-primary/10 bg-primary/5 rounded-full"
+        >
+          <span class="text-sm font-medium text-primary/80">
+            <Sparkles className="h-4 w-4 inline-block mr-2" />
+            Made with Love
+          </span>
+        </div>
+        <h1 class="text-4xl font-semibold font-display">Crafted by a Human</h1>
+        <p class="text-xl text-muted-foreground">
+          Building tools that make email outreach more human
+        </p>
+      </div>
+
+      <div class="mx-auto space-y-8">
+        <p>
+          I built ColdJot because I believe email outreach should be both
+          personal and scalable. As someone who loves design and engineering, I
+          wanted to create a tool that makes managing email sequences feel
+          natural and effortless.
+        </p>
+
+        <p>
+          What started as a way to manage my own email campaigns has grown into
+          a complete toolkit for building relationships through email. From
+          sophisticated sequences to analytics that help you understand what
+          works, every feature is designed to help you connect more effectively.
+        </p>
+
+        <p>
+          ColdJot is a one-person project, which means you're getting a tool
+          crafted with care and intention. No venture funding, no growth hacks –
+          just thoughtful features built for people who care about meaningful
+          connections.
+        </p>
+
+        <div class="mt-16 text-center space-y-8">
+          <p class="text-lg font-medium italic">
+            "Thank you for supporting independent software. I'm committed to
+            making email outreach more personal and effective for everyone."
+          </p>
+
+          <div class="flex flex-col items-center gap-6">
+            <img
+              src="/zee.jpg"
+              alt="Zee - Creator of ColdJot"
+              class="w-24 h-24 rounded-full object-cover"
+            />
+            <div class="flex flex-col items-center">
+              <img
+                src="/signature.png"
+                alt="Zee's Signature"
+                class="h-12 mb-2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

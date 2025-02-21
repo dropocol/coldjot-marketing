@@ -1,6 +1,7 @@
 ---
 import { Button } from "./button";
-import { Github, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 interface PricingPlan {
   name: string;
@@ -11,6 +12,7 @@ interface PricingPlan {
   action: {
     text: string;
     variant: "default" | "outline";
+    href?: string;
   };
 }
 
@@ -31,6 +33,7 @@ const pricingPlans: PricingPlan[] = [
     action: {
       text: "Star on GitHub",
       variant: "outline",
+      href: "https://github.com/coldjot/coldjot",
     },
   },
   {
@@ -118,10 +121,12 @@ const pricingPlans: PricingPlan[] = [
                   className="w-full mt-6"
                   client:load
                 >
-                  {plan.name === "Community Edition" && (
-                    <Github className="h-4 w-4 mr-2" />
-                  )}
-                  {plan.action.text}
+                  <a href={plan.action.href} class="flex items-center">
+                    {plan.name === "Community Edition" && (
+                      <SiGithub className="h-4 w-4 mr-2 text-black" />
+                    )}
+                    {plan.action.text}
+                  </a>
                 </Button>
               </div>
             </div>

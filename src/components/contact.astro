@@ -5,50 +5,20 @@ import { Mail } from "lucide-react";
 <section id="contact" class="py-20 bg-slate-50/50">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center space-y-4 mb-8">
-      <h2 class="text-4xl font-semibold font-display">Get in Touch</h2>
+      <h2 class="text-4xl font-semibold font-display">Questions?</h2>
       <p class="text-xl text-muted-foreground">
-        Have questions? I'm here to help you succeed.
+        Get help directly from the creator of ColdJot
       </p>
     </div>
 
-    <div class="mt-12">
-      <div
-        class="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 text-center"
+    <div class="mt-8 flex justify-center">
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 py-2"
       >
-        <div class="mx-auto max-w-2xl space-y-6">
-          <div
-            class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mb-2"
-          >
-            <Mail className="h-8 w-8 text-primary" />
-          </div>
-
-          <div class="space-y-4">
-            <h3 class="text-2xl font-semibold text-foreground">
-              Direct Line to the Creator
-            </h3>
-            <p class="text-muted-foreground">
-              Hey, I'm Zee – the developer behind ColdJot. After years of
-              building automation tools for companies like Meta and helping
-              businesses scale their outreach, I created ColdJot to solve the
-              real problems in email automation.
-            </p>
-            <p class="text-muted-foreground">
-              Whether you need technical help, have feature requests, or want to
-              discuss your specific use case, I'm personally available to help
-              you get the most out of ColdJot.
-            </p>
-          </div>
-
-          <div class="pt-4">
-            <a
-              href="mailto:zee@coldjot.com"
-              class="inline-flex items-center justify-center text-lg font-medium text-primary hover:underline"
-            >
-              zee@coldjot.com
-            </a>
-          </div>
-        </div>
-      </div>
+        <Mail className="mr-2 h-5 w-5" />
+        Get in Touch
+      </a>
     </div>
   </div>
 </section>

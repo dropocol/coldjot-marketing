@@ -1,0 +1,60 @@
+---
+import Layout from "@/layouts/layout.astro";
+import { Mail, Sparkles } from "lucide-react";
+import { Button } from "@/components/button";
+---
+
+<Layout>
+  <section class="py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-4 mb-16">
+        <div
+          class="inline-flex items-center justify-center px-4 py-1.5 mb-4 border border-primary/10 bg-primary/5 rounded-full"
+        >
+          <span class="text-sm font-medium text-primary/80">
+            <Sparkles className="h-4 w-4 inline-block mr-2" />
+            Direct Support
+          </span>
+        </div>
+        <h1 class="text-4xl font-semibold font-display">Let's Talk</h1>
+        <p class="text-xl text-muted-foreground">
+          Get help directly from the person who built ColdJot
+        </p>
+      </div>
+
+      <div class="mx-auto space-y-12">
+        <p class="text-center text-lg">
+          Need help or have suggestions? I personally read and respond to every
+          message. No support teams, no automated replies – just direct
+          communication that helps make ColdJot better for everyone.
+        </p>
+
+        <div class="flex flex-col items-center gap-8">
+          <div class="flex flex-col items-center gap-6">
+            <Button variant="default" size="lg" className="h-12">
+              <a
+                class="flex items-center justify-center"
+                href="mailto:zee@coldjot.com"
+              >
+                <Mail className="mr-2 h-5 w-5" />
+                zee@coldjot.com
+              </a>
+            </Button>
+            <a
+              href="/by-a-human"
+              class="text-base text-muted-foreground hover:text-foreground"
+            >
+              Learn more about who built ColdJot →
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-sm text-muted-foreground">
+            Response time: Usually within 24 hours
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -15,22 +15,29 @@ import { Github, ArrowRight } from "lucide-react";
       <div class="relative px-6 py-16 sm:px-16 sm:py-20 lg:px-20">
         <div class="mx-auto max-w-2xl text-center">
           <h2 class="text-4xl font-semibold font-display tracking-tight">
-            Ready to Automate Your Follow-ups?
+            Ready to Make Email Personal Again?
           </h2>
           <p class="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
-            Join the open source revolution in email automation. Start with our
-            Community Edition today – it's free forever, and you own your data.
+            Join the open source movement to make email outreach more human.
+            Build meaningful connections with sequences that convert, while
+            keeping full control of your data.
           </p>
           <div class="mt-10 flex items-center justify-center gap-4">
-            <Button variant="default" size="lg" className="group" client:load>
+            <!-- <Button variant="default" size="lg" className="group" client:load>
               Get Started Free
               <ArrowRight
                 className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
               />
-            </Button>
+            </Button> -->
             <Button variant="outline" size="lg" client:load>
-              <Github className="mr-2 h-4 w-4" />
-              Star on GitHub
+              <a
+                class="flex items-center justify-center"
+                href="https://github.com/dropocol/coldjot"
+                target="_blank"
+              >
+                <Github className="mr-2 h-4 w-4" />
+                Star on GitHub
+              </a>
             </Button>
           </div>
         </div>
