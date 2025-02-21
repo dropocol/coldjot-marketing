@@ -6,8 +6,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  // site: "http://www.coldjot.com",
-  base: "/",
+  site: "http://www.coldjot.com",
+  // site: "https://dropocol.github.io",
   trailingSlash: "never",
   integrations: [react(), tailwind()],
 });
