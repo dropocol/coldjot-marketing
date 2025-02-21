@@ -78,7 +78,7 @@ const additionalFeatures = [
 <section id="features" class="py-20">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Solution Section -->
-    <div class="text-center space-y-6 mb-16">
+    <div class="text-center space-y-6 mb-24">
       <div
         class="inline-flex items-center justify-center px-4 py-1.5 mb-4 border border-primary/10 bg-primary/5 rounded-full"
       >
@@ -98,10 +98,10 @@ const additionalFeatures = [
     <div class="space-y-24 mb-32">
       {
         mainFeatures.map((feature) => (
-          <div class="space-y-8">
-            <div class="flex flex-col max-w-xl text-left items-start space-y-2">
+          <div class="flex flex-col items-center space-y-8">
+            <div class="flex flex-col text-center max-w-xl items-center space-y-2">
               <h3 class="text-3xl font-semibold mb-2">{feature.title}</h3>
-              <p class="text-left text-base text-muted-foreground">
+              <p class="text-center text-lg text-muted-foreground">
                 {feature.description}
               </p>
             </div>
@@ -124,14 +124,17 @@ const additionalFeatures = [
     <!-- Additional Features -->
     <div class="space-y-8">
       <div class="space-y-2">
-        <div class="flex flex-col max-w-xl mx-auto items-center space-y-2">
-          <h3 class="text-3xl font-semibold mb-2">Everything You Need</h3>
-          <p class="text-center text-base text-muted-foreground">
-            A complete toolkit to <span class="font-semibold text-gray-900"
+        <div
+          class="flex flex-col max-w-2xl mx-auto items-center space-y-6 mb-16"
+        >
+          <h3 class="text-4xl font-semibold">Everything You Need</h3>
+          <p
+            class="text-xl text-muted-foreground max-w-3xl mx-auto text-center"
+          >
+            A complete toolkit to <span class="text-gray-900"
               >build relationships at scale</span
-            > and <span class="font-semibold text-gray-900"
-              >convert cold prospects</span
-            > into warm leads.
+            > and <span class="text-gray-900">convert cold prospects</span> into
+            warm leads.
           </p>
         </div>
       </div>

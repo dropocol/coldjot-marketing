@@ -8,7 +8,7 @@ interface PricingPlan {
   badge?: string;
   description: string;
   price: string;
-  features: string[];
+  features: Array<{ text: string; comingSoon?: boolean }>;
   action: {
     text: string;
     variant: "default" | "outline";
@@ -23,12 +23,12 @@ const pricingPlans: PricingPlan[] = [
     description: "Self-host the full-featured open source version",
     price: "Free Forever",
     features: [
-      "Unlimited email sequences",
-      "Full source code access",
-      "Self-hosted deployment",
-      "Basic analytics",
-      "Community support",
-      "MIT License",
+      { text: "Unlimited email sequences" },
+      { text: "Full source code access" },
+      { text: "Self-hosted deployment" },
+      { text: "Advanced analytics" },
+      { text: "Community support" },
+      { text: "MIT License" },
     ],
     action: {
       text: "Star on GitHub",
@@ -42,12 +42,12 @@ const pricingPlans: PricingPlan[] = [
     description: "Managed cloud solution with advanced features",
     price: "Coming Soon",
     features: [
-      "Everything in Community +",
-      "Managed cloud hosting",
-      "Advanced AI features",
-      "Premium analytics",
-      "Priority support",
-      "Early access to new features",
+      { text: "Everything in Community +" },
+      { text: "Our deployment of ColdJot" },
+      { text: "AI-powered response suggestions", comingSoon: true },
+      { text: "Advanced A/B testing", comingSoon: true },
+      { text: "Priority support" },
+      { text: "Early access to new features" },
     ],
     action: {
       text: "Coming Soon",
@@ -61,11 +61,11 @@ const pricingPlans: PricingPlan[] = [
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center space-y-4 mb-16">
       <h2 class="text-4xl font-semibold font-display">
-        Comprehensive Features
+        Start for free, upgrade when you're ready
       </h2>
       <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-        Start with our powerful open source edition and upgrade to cloud when
-        you need more. No vendor lock-in, ever.
+        Start with our powerful open source edition and upgrade if you want us
+        to manage your emails for you. No vendor lock-in, ever.
       </p>
     </div>
 
@@ -85,9 +85,9 @@ const pricingPlans: PricingPlan[] = [
                 </span>
               </div>
             )}
-            <div class="p-6">
+            <div class="p-6 mt-4">
               <div class="flex flex-col gap-4">
-                <div>
+                <div class="mb-4">
                   <h3 class="text-2xl font-bold">{plan.name}</h3>
                   <p class="text-muted-foreground">{plan.description}</p>
                 </div>
@@ -112,7 +112,14 @@ const pricingPlans: PricingPlan[] = [
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      {feature}
+                      <span class="flex items-center gap-2">
+                        {feature.text}
+                        {feature.comingSoon && (
+                          <span class="inline-flex items-center rounded-full bg-primary/5 px-2 py-0.5 text-xs font-medium text-primary">
+                            Soon
+                          </span>
+                        )}
+                      </span>
                     </li>
                   ))}
                 </ul>

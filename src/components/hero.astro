@@ -1,5 +1,6 @@
 ---
 import { Button } from "@/components/button";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 ---
 
 <section class="relative overflow-hidden">
@@ -26,7 +27,7 @@ import { Button } from "@/components/button";
             >Warm Conversations</span
           >
         </h1>
-        <p class="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+        <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
           Tired of sending hundreds of emails with no response? ColdJot helps
           you
           <span class="font-medium text-foreground"
@@ -38,6 +39,16 @@ import { Button } from "@/components/button";
       </div>
       <div class="flex justify-center gap-4">
         <Button variant="default" size="lg" client:load>Coming Son</Button>
+        <Button variant="outline" size="lg" client:load>
+          <a
+            class="flex items-center justify-center"
+            href="https://github.com/dropocol/coldjot"
+            target="_blank"
+          >
+            <SiGithub className="mr-2 h-4 w-4" />
+            Star on GitHub
+          </a>
+        </Button>
         <!-- <Button variant="outline" size="lg" client:load>Watch Demo</Button> -->
       </div>
 
