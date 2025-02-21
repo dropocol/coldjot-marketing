@@ -38,7 +38,23 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://coldjot.com/og-image.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QPRQ5K76FB"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-QPRQ5K76FB");
+    </script>
   </head>
+
   <body class="min-h-screen flex flex-col bg-background text-foreground">
     <Navigation client:load />
     <main class="flex-1">
