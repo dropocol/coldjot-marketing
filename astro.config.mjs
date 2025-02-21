@@ -13,4 +13,13 @@ export default defineConfig({
   build: {
     assets: "assets",
   },
+  vite: {
+    resolve: {
+      alias: {
+        "@": "/src",
+        "@components": "/src/components",
+        "@layouts": "/src/layouts",
+      },
+    },
+  },
 });
