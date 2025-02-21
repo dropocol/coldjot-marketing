@@ -10,4 +10,7 @@ export default defineConfig({
   // site: "https://dropocol.github.io",
   trailingSlash: "never",
   integrations: [react(), tailwind()],
+  build: {
+    assets: "assets",
+  },
 });
