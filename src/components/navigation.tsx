@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "./button";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,10 +36,15 @@ export const Navigation: React.FC = () => {
                 {item.name}
               </a>
             ))}
-            {/* <Button variant="ghost" size="sm">
-              <a href="https://app.coldjot.com/auth/signin">Sign In</a>
-            </Button> */}
-            <Button size="sm">Coming Soon</Button>
+            <a
+              href="https://github.com/dropocol/coldjot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              <SiGithub className="h-5 w-5" />
+            </a>
+            {/* <Button size="sm">Coming Soon</Button> */}
           </div>
 
           {/* Mobile menu button */}
